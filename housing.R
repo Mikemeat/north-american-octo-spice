@@ -93,3 +93,12 @@ summary(housing)
 
 #rbind append two datasets (must have same number of columns)
 #test$Survived[test$Sex == 'female'] <- 1
+
+#model diagnositics
+
+head(fortify(house1))
+
+h1 <- ggplot(aes(x=.fitted, y=.resid), data = house1) + geom_point() + geom_hline(yintercept = 0) + geom_smooth(se = FALSE) + labs(x="Fitted Values", y= "Residuals")
+labs(x="Fitted Values", y="Residuals")
+
+
